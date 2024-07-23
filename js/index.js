@@ -113,7 +113,7 @@ function sayac(){
     kutu.style.height = '100px' 
     kutu.id = 'kutu'
 }) */
-
+// deneysaati
 
 /* 
 document.getElementById('datetimepicker').style.display = 'none'
