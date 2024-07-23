@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Tempus Dominus CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.8/dist/css/tempus-dominus.min.css" />
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <style>
+    #anaOgeler{
+    font-family: Lobster, sans-serif;
+    }
+    #islemler{
+        color: #a9a9a9;
+    }
+    .tarih-icon:hover{
+        color:#000000;
+    }
+    .saat-icon:hover{
+        color:#000000;
+    }
+    .misafir-icon:hover{
+        color:#000000;
+    }
+    .check-icon:hover{
+        color:#000000;
+    }
+    .btn{
+        color: #a9a9a9;
+    }
+    .btn:hover{
+        color: #000000;
+    }
+    .tempus-dominus-widget.dark{
+        color: #808080;
+        background-color: #f5f5f5;
+        border-radius: 2%;
+    }
+    .tempus-dominus-widget.dark .date-container-days .dow {
+        color: #000000;
+    }
+
+        
+        
+    </style> -->
+
+    <title>The Selenium Cafe & Restaurant </title>
+</head>
+<body>
+    <header>
+        <div class="container text-center">
+        <img src="images/the Selenium.png" width="500" height="250" alt="The Selenium Cafe & Restaurant Site Logosu" />
+        </div>
+        <div id="anaOgeler" class="container col-md-3 text-center">
+            <div class="row" id="islemler">
+                <div class="col active">
+                    <a class="nav-link" aria-current="page" href="index.html">
+                        <i class="fa-solid fa-calendar-days fa-xl tarih-icon"></i> <br>
+                        <p>Tarih</p>
+                        <p id="bosTarih"></p>
+                    </a>
+                </div>
+                <div class="col" >
+                    <a class="nav-link" aria-current="page" href="saat.html">
+                        <i class="fa-solid fa-clock fa-xl saat-icon"></i> <br>
+                        <p>Saat</p>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="nav-link" aria-current="page" href="misafir.html">
+                        <i class="fa-solid fa-users fa-xl misafir-icon"></i> <br>
+                        <p>Misafir</p>
+                    </a>
+                </div>
+                <!-- <div class="col">
+                    <a class="nav-link" aria-current="page" href="islemtamamla.html">
+                        <i class="fa-solid fa-check fa-2xl  check-icon"></i> <br>
+                        <p>Tamamla</p>
+                    </a>
+                </div> -->
+            </div>
+            <div id="tarihSecimi" style="margin-top: 10px; font-size: large; color:#a9a9a9;">
+                <span id="contentInfo">Lütfen rezervasyon yapacağınız tarihi seçiniz</span>
+            </div>
+            <!-- Calender start-->
+            <div class="container mt-5" id="anaSayfa">
+                <div class="row justify-content-center">
+                   <div class="col-md-8 d-flex justify-content-center">
+                      <div>
+                         <div id="datetimepicker"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+            <!-- Calender end-->
+            <div class="container mt-4 text-center" style="font-size: large">
+                <i class="fa-solid fa-circle-info fa-xl" style="color: #afb6b4;"></i>
+                <p class="mt-4" style="color: #a9a9a9;">
+                    İstediğiniz tarihlerde müsaitlik yok mu? Dilerseniz bekleme listemize girebilirsiniz. Müsaitlik olması durumunda sizi haberdar edeceğiz.
+                </p>
+                <a href="#" class="btn">Bekleme Listesine Katıl</a>
+            </div>
+        </div>
+    </header>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+           new tempusDominus.TempusDominus(document.getElementById('datetimepicker'), {
+              display: {
+                 inline: true,
+                 sideBySide: false,
+                 components: {
+                    calendar: true,
+                    date: true,
+                    month: true,
+                    year: true,
+                    decades: true,
+                    clock: false // Saat seçiciyi devre dışı bıraktık
+                 }
+              }
+           });
+        });
+
+
+        
+     </script>
+    <!-- jQuery (Opsiyonel, sadece Tempus Dominus için değil) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Moment.js (Tempus Dominus tarafından kullanılır) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- Tempus Dominus JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.8/dist/js/tempus-dominus.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    
+    <script src="js/index.js"></script>
+
+
+</body>
+</html>
