@@ -44,28 +44,30 @@ $(document).ready(function() {
         fetch('veri2.json')
             .then(response => response.json())
             .then(saatler =>{
-                console.log(saatler)
+                console.log(saatler)  //silinecek, kontrol amaçlı eklendi
 
-
-
-
-
+        
         let yenisaatÖgesi = document.getElementById('anaSayfa')
-        yenisaatÖgesi.innerHTML += `
-                     <div class="col-md-4  mt-4">
-                         <div class="card">
-                             <div class="card-body">
-                                 <h4 class="card-title"></h4>
-                                 <p>rhhdvd</p>
-                             </div>
-                         </div>
-                     </div>        
-                     `
+    
+        let saatlerHTML = '';
+    
+        for (let saat in saatler.hours) {
+            saatlerHTML += `
+                <div class="custom-card">
+                    <div class="custom-card-body">
+                        <div class="card-body">
+                            <h4 class="card-title">${saat}</h4>
+                            <p>${saatler.hours[saat]}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        yenisaatÖgesi.innerHTML += saatlerHTML;
                     
         });
-
-        })
-    });
+    })
+});
 
 
 

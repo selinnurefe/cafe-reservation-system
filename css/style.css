@@ -30,5 +30,22 @@
 .tempus-dominus-widget.dark .date-container-days .dow {
     color: #000000;
 }
+#anaSayfa {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 3px; /* Kartlar arasındaki boşluk */
+    justify-content: center;
+}
+/* Kutu stili */
+.custom-card {
+    background-color: #f5f5f5;
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #808080;
+    border-radius: 4px;
+    color: #808080;
+    font-size: small;
+}
+
+
 
 
