@@ -64,8 +64,15 @@ $(document).ready(function() {
             `;
         }
         yenisaatÖgesi.innerHTML += saatlerHTML;
+        
                     
         });
+        let kutum =  document.querySelector('#anaSayfa')
+    
+        kutum.addEventListener('click',function(){
+            console.log('haid bakalım seçgtik saati afferin ayol')
+        })
+        
     })
 });
 
