@@ -48,7 +48,27 @@
 .custom-card:hover{
     color:#000000;
 }
-
-
+.container-alan{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5pxpx;
+    gap: 10px;
+}
+.eleman{
+    background-color: #f5f5f5 ;
+    padding: 4px;
+    border-radius: 4px;
+    color: salmon;
+    text-align: center;
+    border: 1px outset salmon;
+    transition: background-color 0.4s, color 0.4s, border-radius 0.4s;
+}
+.eleman:hover{
+    background-color: salmon;
+    color: #000000;
+    border-radius: 20px;
+    transition: 5ms;
+    
+}
 
 

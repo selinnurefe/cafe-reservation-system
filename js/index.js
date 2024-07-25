@@ -40,7 +40,7 @@ $(document).ready(function() {
         icerik.innerText = 'Lütfen rezervasyon saatinizi seçiniz'
         
 
-        
+        //saat verilerinin kutu oluşturularak ekrana yazılması 
         fetch('veri2.json')
             .then(response => response.json())
             .then(saatler =>{
@@ -60,12 +60,12 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
-            `;
+            `
         }
         yenisaatÖgesi.innerHTML += saatlerHTML;
         
 
-
+        //saat seçim kısmı
         let kutularım = document.querySelectorAll('.custom-card');
         kutularım.forEach(kutum => {
         kutum.addEventListener('click', function() {
@@ -75,8 +75,22 @@ $(document).ready(function() {
             icerik.innerText = 'Lütfen alan seçimi yapınız'
             document.getElementById('anaSayfa').style.display = 'none'
 
+
+
+           /*  document.getElementById('anaSayfa').innerHTML = `
+                <div class="container-alan">
+                    <div class="eleman">ŞEF'İN MASASI</div>
+                    <div class="eleman">ANA <br> SALON</div>
+                    <div class="eleman">ROOF</div>
+                </div>
+        
+            ` */
             })
+            
         });
+
+        
+
         
 
         });
