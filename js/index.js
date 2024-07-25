@@ -64,11 +64,18 @@ $(document).ready(function() {
         }
         yenisaatÖgesi.innerHTML += saatlerHTML;
         
+
+
         let kutularım = document.querySelectorAll('.custom-card');
         kutularım.forEach(kutum => {
         kutum.addEventListener('click', function() {
-                console.log('Hadi bakalım seçtik saati! Aferin ayol.');
-            });
+            let saatSecilen = kutum.querySelector('h4').innerText;
+            console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
+            document.getElementById('bosSaat').innerText = `${saatSecilen}`
+            icerik.innerText = 'Lütfen alan seçimi yapınız'
+            document.getElementById('anaSayfa').style.display = 'none'
+
+            })
         });
         
 
