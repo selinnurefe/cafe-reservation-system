@@ -45,6 +45,9 @@
     color: #808080;
     font-size: small;
 }
+.custom-card:hover{
+    color:#000000;
+}
 
 
 

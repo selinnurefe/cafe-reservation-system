@@ -48,7 +48,6 @@ $(document).ready(function() {
 
         
         let yenisaatÖgesi = document.getElementById('anaSayfa')
-    
         let saatlerHTML = '';
     
         for (let saat in saatler.hours) {
@@ -64,10 +63,21 @@ $(document).ready(function() {
             `;
         }
         yenisaatÖgesi.innerHTML += saatlerHTML;
-                    
+        
+        let kutularım = document.querySelectorAll('.custom-card');
+        kutularım.forEach(kutum => {
+        kutum.addEventListener('click', function() {
+                console.log('Hadi bakalım seçtik saati! Aferin ayol.');
+            });
         });
+        
+
+        });
+        
+        
     })
 });
+
 
 
 
