@@ -73,20 +73,34 @@ $(document).ready(function() {
             console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
             document.getElementById('bosSaat').innerText = `${saatSecilen}`
             icerik.innerText = 'Lütfen alan seçimi yapınız'
-            document.getElementById('anaSayfa').style.display = 'none'
+            
 
-
-
-           /*  document.getElementById('anaSayfa').innerHTML = `
+            document.getElementById('anaSayfa').innerHTML = `
                 <div class="container-alan">
                     <div class="eleman">ŞEF'İN MASASI</div>
                     <div class="eleman">ANA <br> SALON</div>
                     <div class="eleman">ROOF</div>
                 </div>
         
-            ` */
+            `
+        let kisiSayisi = document.querySelectorAll('.container-alan')
+        kisiSayisi.forEach(misafirler =>{
+            misafirler.addEventListener('click',function(){
+                console.log('çalışıyor çalışıyor sakinnnn') //kontrol amaçlı yazıldı, silinecek
+                misafirler.innerHTML += `
+                    <div class="container-misafir">
+                        <div class="adetler">2</div>
+                        <div class="adetler">3</div>
+                        <div class="adetler">4</div>
+                        <div class="adetler">5</div>
+                        <div class="adetler">6</div>
+                    </div>
+                `
             })
-            
+        })
+
+        
+        }) 
         });
 
         

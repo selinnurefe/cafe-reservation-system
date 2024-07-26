@@ -38,16 +38,23 @@
 }
 /* Kutu stili */
 .custom-card {
-    background-color: #f5f5f5;
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #808080;
+    background-color: #f5f5f5 ;
+    padding: 6px;
     border-radius: 4px;
-    color: #808080;
+    color: salmon;
+    text-align: center;
+    border: 1px outset #000000;
+    transition: background-color 0.4s, color 0.4s, border-radius 0.4s;
     font-size: small;
 }
 .custom-card:hover{
-    color:#000000;
+    background-color: #f5f5f5;
+    color: #000000;
+    border-radius: 20px;
+    transition: 5ms;
+
 }
+
 .container-alan{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -60,15 +67,24 @@
     border-radius: 4px;
     color: salmon;
     text-align: center;
-    border: 1px outset salmon;
+    border: 1px outset #000000;
     transition: background-color 0.4s, color 0.4s, border-radius 0.4s;
 }
 .eleman:hover{
-    background-color: salmon;
+    background-color: #f5f5f5;
     color: #000000;
     border-radius: 20px;
     transition: 5ms;
     
 }
-
+.container-misafir{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.adetler{
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 4px;
+}
 
