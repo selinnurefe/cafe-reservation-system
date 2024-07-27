@@ -113,7 +113,7 @@ $(document).ready(function() {
     })
 });
 
-
+//clear kodu yazmalısın sorunu çözmek için
 
 
 
