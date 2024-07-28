@@ -81,13 +81,18 @@ $(document).ready(function() {
                     <div class="eleman">ANA <br> SALON</div>
                     <div class="eleman">ROOF</div>
                 </div>
+                
         
             `
-        let kisiSayisi = document.querySelectorAll('.container-alan')
+        let kisiSayisi = document.querySelectorAll('.eleman')
         kisiSayisi.forEach(misafirler =>{
             misafirler.addEventListener('click',function(){
                 console.log('çalışıyor çalışıyor sakinnnn') //kontrol amaçlı yazıldı, silinecek
-                misafirler.innerHTML += `
+                document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
+                <div class="container-kapsam">
+                    <div class="container-soru">
+                        <span class="sorucümlesi">Lütfen misafir sayısını seçiniz</span>
+                    </div>
                     <div class="container-misafir">
                         <div class="adetler">2</div>
                         <div class="adetler">3</div>
@@ -95,7 +100,8 @@ $(document).ready(function() {
                         <div class="adetler">5</div>
                         <div class="adetler">6</div>
                     </div>
-                `
+                </div>
+            `)
             })
         })
 
