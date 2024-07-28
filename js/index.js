@@ -88,6 +88,7 @@ $(document).ready(function() {
         kisiSayisi.forEach(misafirler =>{
             misafirler.addEventListener('click',function(){
                 console.log('çalışıyor çalışıyor sakinnnn') //kontrol amaçlı yazıldı, silinecek
+                
                 document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
                 <div class="container-kapsam">
                     <div class="container-soru">
