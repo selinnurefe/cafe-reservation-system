@@ -84,12 +84,15 @@ $(document).ready(function() {
                 
         
             `
-        let kisiSayisi = document.querySelectorAll('.eleman')
-        kisiSayisi.forEach(misafirler =>{
-            misafirler.addEventListener('click',function(){
-                console.log('çalışıyor çalışıyor sakinnnn') //kontrol amaçlı yazıldı, silinecek
-                
-                document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
+        // Tüm elemanları seçme
+        const kisiSayisi = document.querySelectorAll('.eleman');
+        
+        // Olay işleyici fonksiyonu tanımlama
+        function handleClick(event) {
+            console.log('Çalışıyor, sakin olun!'); // Kontrol amaçlı yazıldı
+
+            // Yeni içeriği ekle
+            document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
                 <div class="container-kapsam">
                     <div class="container-soru">
                         <span class="sorucümlesi">Lütfen misafir sayısını seçiniz</span>
@@ -102,10 +105,18 @@ $(document).ready(function() {
                         <div class="adetler">6</div>
                     </div>
                 </div>
-            `)
-            
-            })
-        })
+            `);
+
+            // Tüm elemanlardan olay dinleyicisini kaldır
+            kisiSayisi.forEach(misafirler => {
+                misafirler.removeEventListener('click', handleClick);
+            });
+        }
+
+        // Her bir eleman için olay dinleyicisi ekleme
+        kisiSayisi.forEach(misafirler => {
+            misafirler.addEventListener('click', handleClick);
+        });
 
         
         }) 
