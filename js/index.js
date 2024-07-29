@@ -116,6 +116,17 @@ $(document).ready(function() {
                     document.getElementById('anaSayfa').style.display = 'none'
                     document.getElementById('misafirSecimAlanı').style.display = 'none'
 
+                    document.getElementById('islemler').insertAdjacentHTML('beforeend', `
+        
+                        <div class="col">
+                            <a class="nav-link" id="islemi-tamamla" aria-current="page" href="islemtamamla.html">
+                                <i class="fa-solid fa-check fa-2xl  check-icon"></i> <br>
+                                <p>İşlemi <br>Tamamla</p>
+                            </a>
+                        </div>
+                        
+                            `);
+
 
                 })
             })
@@ -132,6 +143,11 @@ $(document).ready(function() {
             misafirler.addEventListener('click', handleClick);
         });
 
+        
+
+
+       
+        
 
         }) 
         });

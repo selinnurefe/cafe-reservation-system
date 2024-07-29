@@ -113,3 +113,10 @@
     font-size: large; 
     color:#a9a9a9;
 }
+#islemi-tamamla{
+    color: #00ff00;
+    
+}
+#islemi-tamamla > p {
+    margin-top: 20px;
+}
