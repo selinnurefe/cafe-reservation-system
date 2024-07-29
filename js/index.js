@@ -162,6 +162,21 @@ $(document).ready(function() {
     })
 });
 
+
+
+
+
+
+
+/* 
+<div class="container mt-5">
+        <div>      
+                <input type="text" name="username" id="kullaniciAdi" placeholder="kullanıcı adınızı giriniz">
+                <input type="password" name="sifre" id="kullaniciSifre" placeholder="şifrenizi giriniz">
+                <input type="submit" value="gönder" onclick="login()">                 
+        </div>
+    </div>
+*/
 //clear kodu yazmalısın sorunu çözmek için
 /* 
 let kutularım = document.querySelectorAll('.custom-card');
