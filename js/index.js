@@ -84,7 +84,7 @@ $(document).ready(function() {
                 
         
             `
-        // Tüm elemanları seçme
+        // misafir sayısı seçimini ekrana çıkartma kısmı
         const kisiSayisi = document.querySelectorAll('.eleman');
         
         // Olay işleyici fonksiyonu tanımlama
@@ -118,9 +118,14 @@ $(document).ready(function() {
             misafirler.addEventListener('click', handleClick);
         });
 
-        
         }) 
         });
+        let misafirSecim = document.getElementsByClassName('adetler')
+            misafirSecim.forEach(daireAdetler =>{
+                daireAdetler.addEventListener('click',function(){
+                    console.log(daireAdetler)
+                })
+            })
 
         
 
@@ -133,7 +138,14 @@ $(document).ready(function() {
 });
 
 //clear kodu yazmalısın sorunu çözmek için
-
+/* 
+let kutularım = document.querySelectorAll('.custom-card');
+        kutularım.forEach(kutum => {
+        kutum.addEventListener('click', function() {
+            let saatSecilen = kutum.querySelector('h4').innerText;
+            console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
+            document.getElementById('bosSaat').innerText = `${saatSecilen}`
+            icerik.innerText = 'Lütfen alan seçimi yapınız' */
 
 
 /* 
