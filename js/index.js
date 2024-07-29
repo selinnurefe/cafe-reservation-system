@@ -93,7 +93,7 @@ $(document).ready(function() {
 
             // Yeni içeriği ekle
             document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
-                <div class="container-kapsam">
+                <div class="container-kapsam" id="misafirSecimAlanı">
                     <div class="container-soru">
                         <span class="sorucümlesi">Lütfen misafir sayısını seçiniz</span>
                     </div>
@@ -106,6 +106,20 @@ $(document).ready(function() {
                     </div>
                 </div>
             `);
+            let misafirSecim = document.querySelectorAll('.adetler')
+            misafirSecim.forEach(daireAdetler =>{
+                daireAdetler.addEventListener('click',function(){
+                    let secilenMisafirAdeti = daireAdetler.innerText
+                    console.log(secilenMisafirAdeti)
+                    document.getElementById('bosMisafir').innerText = `${secilenMisafirAdeti}`
+                    document.getElementById('tarihSecimi').style.display = 'none'
+                    document.getElementById('anaSayfa').style.display = 'none'
+                    document.getElementById('misafirSecimAlanı').style.display = 'none'
+
+
+                })
+            })
+
 
             // Tüm elemanlardan olay dinleyicisini kaldır
             kisiSayisi.forEach(misafirler => {
@@ -118,15 +132,10 @@ $(document).ready(function() {
             misafirler.addEventListener('click', handleClick);
         });
 
+
         }) 
         });
-        let misafirSecim = document.getElementsByClassName('adetler')
-            misafirSecim.forEach(daireAdetler =>{
-                daireAdetler.addEventListener('click',function(){
-                    console.log(daireAdetler)
-                })
-            })
-
+        
         
 
         
