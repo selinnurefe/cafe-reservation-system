@@ -13,10 +13,10 @@
         <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required>
 
         <!-- Telefon -->
-        <input id="phone" name="phone" type="tel" required>
+        <input id="phone" name="phone" type="tel" placeholder="Telefon numaranız" required>
 
         <!-- Eposta -->
-        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta" required>
+        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta adresiniz" required>
 
         <!-- Alerjen Bilgisi -->
         
@@ -28,7 +28,12 @@
 
         <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok" required>
         <label for="alerjenYok">Hayır</label><br>
-                
+          
+        <!-- Özel İstekler ve Alerjen Bilgisi -->
+
+        <h4><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h4>
+        <textarea id="textareaÖzelİstek" name="textareaÖzelİstek" rows="4" cols="50" placeholder="Özel isteklerinizi ve alerjen bilgisini buraya yazabilirsiniz(opsiyonel)" ></textarea>
+        <br>
           
         <!-- Gönder butonu -->
         <input type="submit" value="gönder" onclick="login()">   
