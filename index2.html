@@ -9,27 +9,33 @@
 <body>
     <form action="/" method="post">
         <!-- Ad ve Soyad -->
-        <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız">
-        <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız">
+        <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız" required>
+        <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required>
 
         <!-- Telefon -->
-        <input id="phone" type="tel">
+        <input id="phone" name="phone" type="tel" required>
 
         <!-- Eposta -->
-        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta">
+        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta" required>
 
         <!-- Alerjen Bilgisi -->
+        
         <h4>Alerjen Bilgisi</h4>
         <p>Siz veya misafirleriniz arasında herhangi bir şeye alerjisi olan var mı? </p>
-          <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var">
-          <label for="alerjenVar">Evet</label><br>
-          <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok">
-          <label for="alerjenYok">Hayır</label><br>
+
+        <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var" required>
+        <label for="alerjenVar">Evet</label><br>
+
+        <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok" required>
+        <label for="alerjenYok">Hayır</label><br>
                 
           
         <!-- Gönder butonu -->
         <input type="submit" value="gönder" onclick="login()">   
     </form>
+
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script>
@@ -38,6 +44,19 @@
       initialCountry: "us", // Varsayılan ülke kodu
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.min.js" // Telefon numarası formatlama için
     });
+
+
+    /* 
+    -> bu kısım minik tüyo gibi kalsın bakarım sonra o adıma geçince
+    function login() {
+            // Burada form gönderiminden önce yapılacak işlemleri belirleyebilirsiniz
+            // Örneğin, doğrulama veya başka bir JavaScript kodu
+            // Eğer formun gönderilmesini istiyorsanız, return true; döndürmelisiniz
+            // Aksi takdirde, return false; döndürmelisiniz
+            return true; // Bu, formun gönderilmesini sağlar
+        } 
+        
+    */
   </script>
 </body>
 </html>
