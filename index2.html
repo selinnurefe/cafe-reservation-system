@@ -8,17 +8,26 @@
 </head>
 <body>
     <form action="/" method="post">
+        <!-- Ad ve Soyad -->
         <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız">
         <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız">
+
+        <!-- Telefon -->
         <input id="phone" type="tel">
-        <input type="password" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta">
+
+        <!-- Eposta -->
+        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta">
+
+        <!-- Alerjen Bilgisi -->
         <h4>Alerjen Bilgisi</h4>
         <p>Siz veya misafirleriniz arasında herhangi bir şeye alerjisi olan var mı? </p>
           <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var">
           <label for="alerjenVar">Evet</label><br>
           <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok">
           <label for="alerjenYok">Hayır</label><br>
-    
+                
+          
+        <!-- Gönder butonu -->
         <input type="submit" value="gönder" onclick="login()">   
     </form>
 
