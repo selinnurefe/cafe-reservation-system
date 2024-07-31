@@ -145,7 +145,7 @@ $(document).ready(function() {
                     <div id="alerjen-box">
                         <!-- Alerjen Bilgisi -->
                         
-                        <h5>Alerjen Bilgisi</h5>
+                        <h5 id="alerjen-bilgisi-baslik">Alerjen Bilgisi</h5>
                         <p>Siz veya misafirleriniz arasında herhangi bir şeye alerjisi olan var mı? </p>
 
                         <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var" required>
