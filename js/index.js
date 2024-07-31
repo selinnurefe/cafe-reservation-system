@@ -113,7 +113,7 @@ $(document).ready(function() {
                     console.log(secilenMisafirAdeti)
                     document.getElementById('bosMisafir').innerText = `${secilenMisafirAdeti}`
                     document.getElementById('tarihSecimi').style.display = 'none'
-                    document.getElementById('anaSayfa').style.display = 'none'
+                    // document.getElementById('anaSayfa').style.display = 'none'
                     document.getElementById('misafirSecimAlanı').style.display = 'none'
 
                     document.getElementById('islemler').insertAdjacentHTML('beforeend', `
@@ -126,7 +126,109 @@ $(document).ready(function() {
                         </div>
                         
                             `);
+                    document.getElementById('anaSayfa').innerHTML = `
+                <div>
+                    <form action="/" method="post" class="rezervasyonBilgiGirisi">
+                        <!-- Ad ve Soyad -->
+                        <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız" required>
+                        <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required> 
 
+                        <!-- Telefon -->
+                        <input id="phone" name="phone" type="tel" placeholder="Telefon numaranız" required>
+
+                        <!-- Eposta -->
+                        <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta adresiniz" required>
+
+                        <!-- Alerjen Bilgisi -->
+                        
+                        <h4>Alerjen Bilgisi</h4>
+                        <p>Siz veya misafirleriniz arasında herhangi bir şeye alerjisi olan var mı? </p>
+
+                        <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var" required>
+                        <label for="alerjenVar">Evet</label><br>
+
+                        <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok" required>
+                        <label for="alerjenYok">Hayır</label><br>
+                        
+                        <!-- Özel İstekler ve Alerjen Bilgisi -->
+
+                        <h4><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h4>
+                        <textarea id="textareaÖzelİstek" name="textareaÖzelİstek" rows="4" cols="50" placeholder="Özel isteklerinizi ve alerjen bilgisini buraya yazabilirsiniz(opsiyonel)" ></textarea>
+                        <br>
+
+                        <!-- Rezervasyon Etiketi(Özel Gün vs) -->
+                        
+                        <p>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</p>
+                        
+                        <input type="checkbox" id="birthday" name="etiketler" value="Birthday">
+                        <label for="birthday">Doğum Günü</label>
+
+                        <input type="checkbox" id="anniversary" name="etiketler" value="Anniversary">
+                        <label for="anniversary">Yıl Dönümü</label>
+
+                        <input type="checkbox" id="honeymoon" name="etiketler" value="Honeymoon">
+                        <label for="honeymoon">Honeymoon</label> <br>
+                        
+
+                        <!-- Fatura Talebi -->
+
+                        <p>Bu ziyaretinizde fatura talebiniz olacak mı?</p>
+
+                        <input type="radio" id="faturaTalebiVar" name="faturaTalebi" value="Evet" required>
+                        <label for="faturaTalebiVar">Evet</label><br>
+
+                        <input type="radio" id="faturaTalebiYok" name="faturaTalebi" value="Hayır" required> 
+                        <label for="faturaTalebiYok">Hayır</label><br>
+                    </form>
+                </div        
+                `
+            
+
+            document.getElementById('beklemeListesi').innerHTML = `
+                <div>
+                    <!-- Bilgilendirmes Kutusu -->
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-circle-info fa-xl" style="color: #afb6b4;"></i>
+                        <h3>Şartlar & Koşullar</h3>
+                        <span>Lütfen aşağıdaki <b>adımları</b> inceleyin.</span>
+                        <p><b>Özel Diyet:</b> <br>
+                            Günlük olarak değişim gösteren tadım menümüz sebze, deniz mahsülü ve kırmızı etlerden oluşmaktadır. Bu sebepten dolayı vejeteryan, vegan, glutensiz ve süt ürünleri içermeyen menü servis edemiyoruz.
+                        </p>
+                        <p><b>Rezervasyon & Ödeme:</b> <br>
+                            Rezervasyonunuzun geçerliliğinin devam etmesi için 24 saat içerisinde kişi başı 4900 TL tutarında ön ödeme yapmanız gerekmektedir. <br>
+                            Tadım menüsü kişi başı 9900 TL +%12 servis bedeli olarak fiyatlandırılmaktadır. <br>
+                            Online rezervasyon oluşturma aşamasında gerçekleştirmiş olduğunuz ön ödeme toplam hesabınızdan düşülecektir.
+                        </p>
+                        <p><b>Restoran Deneyimi:</b> <br>
+                            10 adımdan oluşan ve süprizler içerebilen tadım menüsü, ortalama 2 saat içerisinde servis edilmektedir. Alakart servisimiz <b>bulunmamaktadır.</b>
+                        </p>
+                        <p><b>Küçük Misafirlerimiz:</b> <br>
+                            14 yaş altı müsafirlerimizi kabul edememekteyiz. Çocuk menüsü <b>bulunmadığını</b> hatırlatmak isteriz. Anlayışınız için teşekkür ederiz.
+                        </p>
+                        <p><b>İptal politikası:</b> <br>
+                            Rezervasyon saatinizden 36 saat öncesine kadar iptal yapabilirsiniz. 36 saat kala yapılan iptaller için ön ödeme sırasında ödenen %20 deposito iadesi yapılamamaktadir.
+                        </p>
+                    </div>
+                    <div class="dress-code-box">
+                        <i class="fa-solid fa-triangle-exclamation" style="color: #afb6b4;"></i>
+                        <h3>Dress Code</h3>
+                        <p>Restoranımıza ait dress code: <b> Cocktail Attire </b> <br>
+                        Size daha iyi bir deneyim sunmak için dress code ile uyumlu giyinmenizi önemle rica ediyoruz.
+                        </p>
+                    </div>
+
+                    <!-- Aydınlatma Metni kısmı -->
+
+                    <div class="aydinlatma-box">
+                    <input type="checkbox" id="aydinlatmaMetni" name="aydinlatmaMetni" value="Evet" required>
+                    <label for="aydinlatmaMetni">Tarafıma sunulan Aydınlatma Metni'ni okudum ve anladım.</label><br>
+                    </div>
+
+                    <!-- Gönder/Submit butonu -->
+                    <button type="submit" id="submit">Ön Ödeme Sayfasına Devam Et</button>
+                </div>
+                `
 
                 })
             })
@@ -142,9 +244,6 @@ $(document).ready(function() {
         kisiSayisi.forEach(misafirler => {
             misafirler.addEventListener('click', handleClick);
         });
-
-        
-
 
        
         
