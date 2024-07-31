@@ -126,22 +126,54 @@
     background-color: #f9f9f9; /* Arka plan rengi */
     padding: 5px;
     }
-    .dress-code-box {
+.dress-code-box {
     border: 3px dotted pink; /* Çerçeve rengi ve kalınlığı */
     border-radius: 5px; /* Köşeleri yuvarlama */
     background-color: #f9f9f9; /* Arka plan rengi */
     padding: 5px;
-    }
-    .aydinlatma-box{
+}
+.aydinlatma-box{
     margin-top: 10px;
-    }
-    #submit{
+}
+#submit{
     background-color: pink;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
     margin-top: 10px;
-    }
-    #submit:hover{
+    margin-bottom: 10px;
+}
+#submit:hover{
     background-color: palevioletred;
-    }
+}
+#alerjen-box{
+    margin-top: 20px;
+}
+#ozel-istek-box{
+    margin-top: 20px;
+}
+#textareaÖzelİstek{
+    border:3px solid #a9a9a9;
+}
+#rezervasyonSahibiAd{
+    border:2px solid #a9a9a9;
+}
+#rezervasyonSahibiSoyad{
+    border:2px solid #a9a9a9;
+}
+#phone{
+    border:2px solid #a9a9a9;
+}
+#rezervasyonSahibiMail{
+    border:2px solid #a9a9a9;
+}
+#rezervasyonSahibiBilgileri{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px ;
+}
+.rez-bilgisi-baslik{
+    margin-bottom: 10px;
+    color:#a9a9a9;
+
+}

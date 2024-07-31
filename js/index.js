@@ -128,7 +128,10 @@ $(document).ready(function() {
                             `);
                     document.getElementById('anaSayfa').innerHTML = `
                 <div>
+                    <h5 class="rez-bilgisi-baslik"> Lütfen rezervasyonunuzu tamamlayın</h5>
+                    
                     <form action="/" method="post" class="rezervasyonBilgiGirisi">
+                    <div id="rezervasyonSahibiBilgileri">
                         <!-- Ad ve Soyad -->
                         <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız" required>
                         <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required> 
@@ -138,10 +141,11 @@ $(document).ready(function() {
 
                         <!-- Eposta -->
                         <input type="email" name="eposta" id="rezervasyonSahibiMail" placeholder="E-posta adresiniz" required>
-
+                    </div>
+                    <div id="alerjen-box">
                         <!-- Alerjen Bilgisi -->
                         
-                        <h4>Alerjen Bilgisi</h4>
+                        <h5>Alerjen Bilgisi</h5>
                         <p>Siz veya misafirleriniz arasında herhangi bir şeye alerjisi olan var mı? </p>
 
                         <input type="radio" id="alerjenVar" name="alerjenBilgisi" value="var" required>
@@ -149,13 +153,15 @@ $(document).ready(function() {
 
                         <input type="radio" id="alerjenYok" name="alerjenBilgisi" value="yok" required>
                         <label for="alerjenYok">Hayır</label><br>
-                        
+                    </div>
+                    <div id="ozel-istek-box">
                         <!-- Özel İstekler ve Alerjen Bilgisi -->
 
-                        <h4><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h4>
+                        <h6><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h6>
                         <textarea id="textareaÖzelİstek" name="textareaÖzelİstek" rows="4" cols="50" placeholder="Özel isteklerinizi ve alerjen bilgisini buraya yazabilirsiniz(opsiyonel)" ></textarea>
                         <br>
-
+                    </div>
+                    <div>
                         <!-- Rezervasyon Etiketi(Özel Gün vs) -->
                         
                         <p>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</p>
@@ -168,8 +174,8 @@ $(document).ready(function() {
 
                         <input type="checkbox" id="honeymoon" name="etiketler" value="Honeymoon">
                         <label for="honeymoon">Honeymoon</label> <br>
-                        
-
+                    </div>   
+                    <div>
                         <!-- Fatura Talebi -->
 
                         <p>Bu ziyaretinizde fatura talebiniz olacak mı?</p>
@@ -179,8 +185,9 @@ $(document).ready(function() {
 
                         <input type="radio" id="faturaTalebiYok" name="faturaTalebi" value="Hayır" required> 
                         <label for="faturaTalebiYok">Hayır</label><br>
+                    </div>
                     </form>
-                </div        
+                </div>       
                 `
             
 
@@ -213,7 +220,7 @@ $(document).ready(function() {
                     <div class="dress-code-box">
                         <i class="fa-solid fa-triangle-exclamation" style="color: #afb6b4;"></i>
                         <h3>Dress Code</h3>
-                        <p>Restoranımıza ait dress code: <b> Cocktail Attire </b> <br>
+                        <p>Dress Code: <b> Cocktail Attire </b> <br>
                         Size daha iyi bir deneyim sunmak için dress code ile uyumlu giyinmenizi önemle rica ediyoruz.
                         </p>
                     </div>
