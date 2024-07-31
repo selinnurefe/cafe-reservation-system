@@ -16,11 +16,15 @@
         background-color: #f9f9f9; /* Arka plan rengi */
         padding: 5px;
         }
+        .aydinlatma-box{
+        margin-top: 10px;
+        }
         #submit{
         background-color: pink;
         border-radius: 5px;
         padding: 5px;
         text-align: center;
+        margin-top: 10px;
         }
         #submit:hover{
         background-color: palevioletred;
@@ -120,8 +124,8 @@
 
             <!-- Aydınlatma Metni kısmı -->
 
-            <div>
-            <input type="radio" id="aydinlatmaMetni" name="aydinlatmaMetni" value="Evet" required>
+            <div class="aydinlatma-box">
+            <input type="checkbox" id="aydinlatmaMetni" name="aydinlatmaMetni" value="Evet" required>
             <label for="aydinlatmaMetni">Tarafıma sunulan Aydınlatma Metni'ni okudum ve anladım.</label><br>
             </div>
 
