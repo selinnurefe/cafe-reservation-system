@@ -148,6 +148,10 @@
 }
 #alerjen-box{
     margin-top: 30px;
+    color: #a9a9a9;
+}
+#alerjen-box > label{
+    color:  #808080;
 }
 #ozel-istek-box{
     margin-top: 20px;
@@ -178,7 +182,6 @@
     margin-bottom: 25px;
     color:#a9a9a9;
 }
-#alerjen-bilgisi-baslik{
-    color: #a9a9a9;
-}
+
+
 
