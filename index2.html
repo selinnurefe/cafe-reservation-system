@@ -16,6 +16,15 @@
         background-color: #f9f9f9; /* Arka plan rengi */
         padding: 5px;
         }
+        #submit{
+        background-color: pink;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
+        }
+        #submit:hover{
+        background-color: palevioletred;
+        }
 
 
   </style>
@@ -102,14 +111,22 @@
                 </p>
             </div>
             <div class="dress-code-box">
-                <i class="fa-solid fa-circle-info fa-xl" style="color: #afb6b4;"></i>
+                <i class="fa-solid fa-triangle-exclamation" style="color: #afb6b4;"></i>
                 <h3>Dress Code</h3>
                 <p>Restoranımıza ait dress code: <b> Cocktail Attire </b> <br>
                 Size daha iyi bir deneyim sunmak için dress code ile uyumlu giyinmenizi önemle rica ediyoruz.
                 </p>
             </div>
-            <!-- Gönder butonu -->
-            <!-- <input type="submit" value="gönder" onclick="login()">    -->
+
+            <!-- Aydınlatma Metni kısmı -->
+
+            <div>
+            <input type="radio" id="aydinlatmaMetni" name="aydinlatmaMetni" value="Evet" required>
+            <label for="aydinlatmaMetni">Tarafıma sunulan Aydınlatma Metni'ni okudum ve anladım.</label><br>
+            </div>
+
+            <!-- Gönder/Submit butonu -->
+            <button type="submit" id="submit">Ön Ödeme Sayfasına Devam Et</button>
         </form>
     </div>
 
