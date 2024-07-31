@@ -44,15 +44,27 @@
         
         <p>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</p>
         
-        <input type="checkbox" id="birthday" name="etiketler" value="birthday">
+        <input type="checkbox" id="birthday" name="etiketler" value="Birthday">
         <label for="birthday">Doğum Günü</label>
 
-        <input type="checkbox" id="anniversary" name="etiketler" value="anniversary">
+        <input type="checkbox" id="anniversary" name="etiketler" value="Anniversary">
         <label for="anniversary">Yıl Dönümü</label>
 
-        <input type="checkbox" id="honeymoon" name="etiketler" value="honeymoon">
+        <input type="checkbox" id="honeymoon" name="etiketler" value="Honeymoon">
         <label for="honeymoon">Honeymoon</label> <br>
           
+
+        <!-- Fatura Talebi -->
+
+        <p>Bu ziyaretinizde fatura talebiniz olacak mı?</p>
+
+        <input type="radio" id="faturaTalebiVar" name="faturaTalebi" value="Evet" required>
+        <label for="faturaTalebiVar">Evet</label><br>
+
+        <input type="radio" id="faturaTalebiYok" name="faturaTalebi" value="Hayır" required> 
+        <label for="faturaTalebiYok">Hayır</label><br>
+
+
         <!-- Gönder butonu -->
         <input type="submit" value="gönder" onclick="login()">   
     </form>
