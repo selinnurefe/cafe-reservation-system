@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rezervasyonBilgiGirisi{
+        
+    }
+  </style>
   <title>IntlTelInput Örneği</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
 </head>
 <body>
-    <form action="/" method="post">
+    <form action="/" method="post" class="rezervasyonBilgiGirisi">
         <!-- Ad ve Soyad -->
         <input type="text" name="name" id="rezervasyonSahibiAd" placeholder="Adınız" required>
-        <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required>
+        <input type="text" name="surname" id="rezervasyonSahibiSoyad" placeholder="Soyadınız" required> 
 
         <!-- Telefon -->
         <input id="phone" name="phone" type="tel" placeholder="Telefon numaranız" required>
@@ -34,6 +39,19 @@
         <h4><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h4>
         <textarea id="textareaÖzelİstek" name="textareaÖzelİstek" rows="4" cols="50" placeholder="Özel isteklerinizi ve alerjen bilgisini buraya yazabilirsiniz(opsiyonel)" ></textarea>
         <br>
+
+        <!-- Rezervasyon Etiketi(Özel Gün vs) -->
+        
+        <p>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</p>
+        
+        <input type="checkbox" id="birthday" name="etiketler" value="birthday">
+        <label for="birthday">Doğum Günü</label>
+
+        <input type="checkbox" id="anniversary" name="etiketler" value="anniversary">
+        <label for="anniversary">Yıl Dönümü</label>
+
+        <input type="checkbox" id="honeymoon" name="etiketler" value="honeymoon">
+        <label for="honeymoon">Honeymoon</label> <br>
           
         <!-- Gönder butonu -->
         <input type="submit" value="gönder" onclick="login()">   
