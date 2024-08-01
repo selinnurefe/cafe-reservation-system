@@ -215,7 +215,7 @@ $(document).ready(function() {
                         </p>
                     </div>
                     <div class="dress-code-box">
-                        <i class="fa-solid fa-triangle-exclamation" style="color: #afb6b4;"></i>
+                        <i class="fa-solid fa-triangle-exclamation fa-lg" style="color: #afb6b4;"></i>
                         <h3>Dress Code</h3>
                         <p>Dress Code: <b> Cocktail Attire </b> <br>
                         Size daha iyi bir deneyim sunmak için dress code ile uyumlu giyinmenizi önemle rica ediyoruz.
@@ -226,7 +226,7 @@ $(document).ready(function() {
 
                     <div class="aydinlatma-box">
                     <input type="checkbox" id="aydinlatmaMetni" name="aydinlatmaMetni" value="Evet" required>
-                    <label for="aydinlatmaMetni">Tarafıma sunulan Aydınlatma Metni'ni okudum ve anladım.</label><br>
+                    <label for="aydinlatmaMetni"> Aydınlatma Metni'ni okudum ve anladım.</label><br>
                     </div>
 
                     <!-- Gönder/Submit butonu -->

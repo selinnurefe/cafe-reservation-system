@@ -203,17 +203,40 @@
     border: 4px dotted pink; /* Çerçeve rengi ve kalınlığı */
     border-radius: 5px; /* Köşeleri yuvarlama */
     background-color: #f9f9f9; /* Arka plan rengi */
-    padding: 8px;
+    padding: 15px 10px;
     margin-top: 10px;
 }
-.aydinlatma-box{
+.dress-code-box > h3{
     margin-top: 10px;
+    color: #808080;
+}
+.dress-code-box > span{
+    color: darkslategray;
+    font-size: medium;
+}
+.dress-code-box > p{
+    font-size: medium;
+    color: darkslategray;
+}
+.aydinlatma-box{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #808080;
+    font-size: small;
+    text-decoration: underline;
+}
+.aydinlatma-box:hover{
+    color: #a9a9a9;
+}
+.aydinlatma-box input[type="checkbox"] {
+    margin-right: 2px; /* Checkbox ile label arasında 10 piksel boşluk */
 }
 #submit{
     background-color: pink;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
+    font-size: medium;
     margin-top: 10px;
     margin-bottom: 10px;
 }
