@@ -199,13 +199,10 @@ $(document).ready(function() {
                         <i class="fa-solid fa-circle-info fa-xl" style="color: #afb6b4;"></i>
                         <h3>Şartlar & Koşullar</h3>
                         <span>Lütfen aşağıdaki <b>adımları</b> inceleyin.</span>
-                        <p><b>Özel Diyet:</b> <br>
-                            Günlük olarak değişim gösteren tadım menümüz sebze, deniz mahsülü ve kırmızı etlerden oluşmaktadır. Bu sebepten dolayı vejeteryan, vegan, glutensiz ve süt ürünleri içermeyen menü servis edemiyoruz.
                         </p>
                         <p><b>Rezervasyon & Ödeme:</b> <br>
-                            Rezervasyonunuzun geçerliliğinin devam etmesi için 24 saat içerisinde kişi başı 4900 TL tutarında ön ödeme yapmanız gerekmektedir. <br>
+                            Rezervasyonunuzun devamlılığı için 24 saat içerisinde kişi başı 4900 TL tutarında ön ödeme yapmanız gerekmektedir. <br>
                             Tadım menüsü kişi başı 9900 TL +%12 servis bedeli olarak fiyatlandırılmaktadır. <br>
-                            Online rezervasyon oluşturma aşamasında gerçekleştirmiş olduğunuz ön ödeme toplam hesabınızdan düşülecektir.
                         </p>
                         <p><b>Restoran Deneyimi:</b> <br>
                             10 adımdan oluşan ve süprizler içerebilen tadım menüsü, ortalama 2 saat içerisinde servis edilmektedir. Alakart servisimiz <b>bulunmamaktadır.</b>

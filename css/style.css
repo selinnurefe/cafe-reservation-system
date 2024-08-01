@@ -120,32 +120,7 @@
 #islemi-tamamla > p {
     margin-top: 20px;
 }
-.info-box {
-    border: 3px dotted pink; /* Çerçeve rengi ve kalınlığı */
-    border-radius: 5px; /* Köşeleri yuvarlama */
-    background-color: #f9f9f9; /* Arka plan rengi */
-    padding: 5px;
-    }
-.dress-code-box {
-    border: 3px dotted pink; /* Çerçeve rengi ve kalınlığı */
-    border-radius: 5px; /* Köşeleri yuvarlama */
-    background-color: #f9f9f9; /* Arka plan rengi */
-    padding: 8px;
-}
-.aydinlatma-box{
-    margin-top: 10px;
-}
-#submit{
-    background-color: pink;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#submit:hover{
-    background-color: palevioletred;
-}
+
 #alerjen-box{
     margin-top: 30px;
     color: #a9a9a9;
@@ -205,6 +180,45 @@
 }
 #rez-fatura-talebi > label{
     color: #a9a9a9;
+}
+.info-box{
+    border: 4px dotted pink; /* Çerçeve rengi ve kalınlığı */
+    border-radius: 5px; /* Köşeleri yuvarlama */
+    background-color: #f9f9f9; /* Arka plan rengi */
+    padding: 15px 10px;
+}
+.info-box > h3{
+    margin-top: 10px;
+    color: #808080;
+}
+.info-box > span{
+    color: darkslategray;
+    font-size: medium;
+}
+.info-box > p{
+    font-size: medium;
+    color: darkslategray;
+}
+.dress-code-box{
+    border: 4px dotted pink; /* Çerçeve rengi ve kalınlığı */
+    border-radius: 5px; /* Köşeleri yuvarlama */
+    background-color: #f9f9f9; /* Arka plan rengi */
+    padding: 8px;
+    margin-top: 10px;
+}
+.aydinlatma-box{
+    margin-top: 10px;
+}
+#submit{
+    background-color: pink;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#submit:hover{
+    background-color: palevioletred;
 }
 
 
