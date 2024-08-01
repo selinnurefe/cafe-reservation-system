@@ -130,7 +130,7 @@
     border: 3px dotted pink; /* Çerçeve rengi ve kalınlığı */
     border-radius: 5px; /* Köşeleri yuvarlama */
     background-color: #f9f9f9; /* Arka plan rengi */
-    padding: 5px;
+    padding: 8px;
 }
 .aydinlatma-box{
     margin-top: 10px;
@@ -151,13 +151,18 @@
     color: #a9a9a9;
 }
 #alerjen-box > label{
-    color:  #808080;
+    color:  #a9a9a9;
 }
 #ozel-istek-box{
     margin-top: 20px;
 }
+#ozel-istek-box > h5{
+    margin-top: 20px;
+    color: #a9a9a9;
+    margin-bottom: 5px;
+}
 #textareaÖzelİstek{
-    border:3px solid #a9a9a9;
+    border:2px solid #a9a9a9;
 }
 #rezervasyonSahibiAd{
     border:2px solid #a9a9a9;
@@ -182,6 +187,26 @@
     margin-bottom: 25px;
     color:#a9a9a9;
 }
+#rez-etiketi-box > h6{
+    margin-top: 20px;
+    color: #a9a9a9;
+}
+#rez-etiketi-box > label{
+    color: #a9a9a9;
+    padding: 3px;
+}
+#rez-fatura-talebi{
+    margin-top: 20px;
+    border: 1px dotted pink;
+    padding: 8px;
+}
+#rez-fatura-talebi > p{
+    color: #a9a9a9;
+}
+#rez-fatura-talebi > label{
+    color: #a9a9a9;
+}
+
 
 
 

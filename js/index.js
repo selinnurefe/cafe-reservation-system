@@ -157,25 +157,25 @@ $(document).ready(function() {
                     <div id="ozel-istek-box">
                         <!-- Özel İstekler ve Alerjen Bilgisi -->
 
-                        <h6><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h6>
+                        <h5><label for="textareaÖzelİstek">Özel İstekleriniz ve Alerjen Bilgisi</label></h5>
                         <textarea id="textareaÖzelİstek" name="textareaÖzelİstek" rows="4" cols="50" placeholder="Özel isteklerinizi ve alerjen bilgisini buraya yazabilirsiniz(opsiyonel)" ></textarea>
                         <br>
                     </div>
-                    <div>
+                    <div id="rez-etiketi-box">
                         <!-- Rezervasyon Etiketi(Özel Gün vs) -->
                         
-                        <p>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</p>
+                        <h6>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</h6>
                         
-                        <input type="checkbox" id="birthday" name="etiketler" value="Birthday">
+                        <input type="radio" id="birthday" name="etiketler" value="Birthday">
                         <label for="birthday">Doğum Günü</label>
 
-                        <input type="checkbox" id="anniversary" name="etiketler" value="Anniversary">
+                        <input type="radio" id="anniversary" name="etiketler" value="Anniversary">
                         <label for="anniversary">Yıl Dönümü</label>
 
-                        <input type="checkbox" id="honeymoon" name="etiketler" value="Honeymoon">
+                        <input type="radio" id="honeymoon" name="etiketler" value="Honeymoon">
                         <label for="honeymoon">Honeymoon</label> <br>
                     </div>   
-                    <div>
+                    <div id="rez-fatura-talebi">
                         <!-- Fatura Talebi -->
 
                         <p>Bu ziyaretinizde fatura talebiniz olacak mı?</p>
