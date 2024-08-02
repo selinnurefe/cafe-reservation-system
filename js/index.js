@@ -30,9 +30,9 @@ $(document).ready(function() {
         console.log('Tıklama gerçekleşti');
         let secilentarih = document.getElementsByClassName('day active')
         console.log(secilentarih) //silinecek, kontrol amaçlı yazıldı
-        let value = secilentarih[0].getAttribute('data-value');
-        console.log(value)  //silinecek, kontrol amaçlı yazıldı
-        document.getElementById('bosTarih').innerText = `${value}`
+        valueTarih = secilentarih[0].getAttribute('data-value');
+        console.log(valueTarih)  //silinecek, kontrol amaçlı yazıldı
+        document.getElementById('bosTarih').innerText = `${valueTarih}`
         
         document.getElementById('datetimepicker').style.display = 'none'
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
         let kutularım = document.querySelectorAll('.custom-card');
         kutularım.forEach(kutum => {
         kutum.addEventListener('click', function() {
-            let saatSecilen = kutum.querySelector('h4').innerText;
+            saatSecilen = kutum.querySelector('h4').innerText;
             console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
             document.getElementById('bosSaat').innerText = `${saatSecilen}`
             icerik.innerText = 'Lütfen alan seçimi yapınız'
@@ -109,7 +109,7 @@ $(document).ready(function() {
             let misafirSecim = document.querySelectorAll('.adetler')
             misafirSecim.forEach(daireAdetler =>{
                 daireAdetler.addEventListener('click',function(){
-                    let secilenMisafirAdeti = daireAdetler.innerText
+                    secilenMisafirAdeti = daireAdetler.innerText
                     console.log(secilenMisafirAdeti)
                     document.getElementById('bosMisafir').innerText = `${secilenMisafirAdeti}`
                     document.getElementById('tarihSecimi').style.display = 'none'
@@ -127,7 +127,7 @@ $(document).ready(function() {
                         
                             `);
                     document.getElementById('anaSayfa').innerHTML = `
-                <div>
+                <div id="guestForm">
                     <h5 class="rez-bilgisi-baslik"> Lütfen rezervasyonunuzu tamamlayın</h5>
                     
                     <form action="/" method="post" class="rezervasyonBilgiGirisi">
@@ -230,7 +230,7 @@ $(document).ready(function() {
                     </div>
 
                     <!-- Gönder/Submit butonu -->
-                    <button type="submit" id="submit">Ön Ödeme Sayfasına Devam Et</button>
+                    <button type="submit" id="submit">Rezervasyonu Tamamla</button>
                 </div>
                 `
 
@@ -249,21 +249,69 @@ $(document).ready(function() {
             misafirler.addEventListener('click', handleClick);
         });
 
-       
+        
         
 
         }) 
         });
         
-        
+
+
+
+        class Guest{
+            constructor(isim, soyisim,telefonNo,mail,tarih,saat,misafirSayisi,alerjenBilgisi,özelİstek,faturaTalebi){
+                  
+                this.isim = isim 
+                this.soyisim = soyisim   
+                this.telefonNo = telefonNo   
+                this.mail = mail 
+                  
+                // this.tarih = tarih  
+                // this.saat = saat   
+                // this.misafirSayisi = misafirSayisi 
+
+                // this.alerjenBilgisi = alerjenBilgisi  
+                // this.özelİstek = özelİstek  
+                // this.faturaTalebi = faturaTalebi   
+            }
+        }
+        const guests = []
+    
+    
+        const guest1 = new Guest('Ayşe', 'Kara', '555-5678', 'ayse.kara@example.com');
+
+        console.log(guest1)
 
         
+        /* 
+        let tarih = valueTarih
+        console.log(tarih)  //silinecek 
+
+        let saat = saatSecilen
+        console.log(saat) //silinecek 
+
+        let misafirSayisi = secilenMisafirAdeti
+        console.log(misafirSayisi) //silinecek  */
+        
+    /*  
+        const isim = document.getElementById('rezervasyonSahibiAd').value;
+        const soyisim = document.getElementById('rezervasyonSahibiSoyad').value;
+        const telefonNo = document.getElementById('phone').value;
+        const mail = document.getElementById('rezervasyonSahibiMail').value;
+         */
+
+
+
+
+
+
 
         });
         
         
     })
 });
+
 
 
 
