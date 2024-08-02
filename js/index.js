@@ -22,36 +22,91 @@ for(let element of dateChoiseArray){                  //event ekledik ancak olma
 });
  */
 
-
-
-$(document).ready(function() {
-    // .day sınıfına sahip tüm elemanları seçiyoruz
-    $('.day').on('click', function() {
-        console.log('Tıklama gerçekleşti');
-        let secilentarih = document.getElementsByClassName('day active')
-        console.log(secilentarih) //silinecek, kontrol amaçlı yazıldı
-        valueTarih = secilentarih[0].getAttribute('data-value');
-        console.log(valueTarih)  //silinecek, kontrol amaçlı yazıldı
-        document.getElementById('bosTarih').innerText = `${valueTarih}`
+class Guest{
+    constructor(isim, soyisim,telefonNo,email,tarih,saat,alanSecimi,misafirSayisi,alerjenBilgisi,ozelIstek,faturaTalebi){
         
-        document.getElementById('datetimepicker').style.display = 'none'
+        this.isim = isim 
+        this.soyisim = soyisim   
+        this.telefonNo = telefonNo   
+        this.email = email 
+          
+        this.tarih = tarih  
+        this.saat = saat
+        this.alanSecimi = alanSecimi 
+        this.misafirSayisi = misafirSayisi 
 
-        let icerik = document.getElementById('contentInfo')
-        icerik.innerText = 'Lütfen rezervasyon saatinizi seçiniz'
-        
+        this.alerjenBilgisi = alerjenBilgisi  
+        this.ozelIstek = ozelIstek  
+        this.faturaTalebi = faturaTalebi   
+    }
+}
 
-        //saat verilerinin kutu oluşturularak ekrana yazılması 
-        fetch('veri2.json')
-            .then(response => response.json())
-            .then(saatler =>{
-                console.log(saatler)  //silinecek, kontrol amaçlı eklendi
 
-        
-        let yenisaatÖgesi = document.getElementById('anaSayfa')
-        let saatlerHTML = '';
-    
+
+/*
+
+Todo3: Verilen veriyi file a json olarak yazan, güncelleyen ve silen 3 fonksiyon yazılacak.
+
+*/
+
+function writeJsonToFile(guest,filePath){
+    //Eğer verilen file pathde dosya yok ise oluştur ve dosyanın içeriği verilen içeriği ekle.
+}
+function updateJsonToFile(guest,filePath,email){
+    //Json dosyasında verilen email objesini bul ve verilen değerler ile objeyi güncelle.
+}
+function deleteJsonToFile(guest,filePath,email){
+    //Json dosyasında verilen email objesini bul ve sil.
+}
+
+/*
+
+Todo1: guest değişkenine kullanıcıdan alabildiğin verileri set edeceksin.
+
+Todo2: formdan kullanıcının girdiği verileri alarak guest değişkeninin içerisine set edeceksin.#afb6b4
+
+Todo3: dosyaya json yazan fonksiyon oluşturacaksın.
+
+Todo4: form submit edildikten ve guest değişkeni doldurulduktan sonra, writeJsonToFile fonksiyonu çağırılacak.
+
+*/
+
+$(document).ready(function () {
+  // .day sınıfına sahip tüm elemanları seçiyoruz
+
+  $(".day").on("click", function () {
+    console.log("Tıklama gerçekleşti");
+
+    //Yeni ici bos guest objesi olusturdum.
+    const guest = new Guest()
+
+    let secilentarih = document.getElementsByClassName("day active");
+    console.log(secilentarih); //silinecek, kontrol amaçlı yazıldı
+    valueTarih = secilentarih[0].getAttribute("data-value");
+    console.log(valueTarih); //silinecek, kontrol amaçlı yazıldı
+    document.getElementById("bosTarih").innerText = `${valueTarih}`;
+
+    //Guest objesi ile olusturmus oldugumuz guest degiskenine tarih degerinin atamasını gerceklestirdik.
+    guest.tarih = valueTarih;
+    guest.
+
+
+    document.getElementById("datetimepicker").style.display = "none";
+
+    let icerik = document.getElementById("contentInfo");
+    icerik.innerText = "Lütfen rezervasyon saatinizi seçiniz";
+
+    //saat verilerinin kutu oluşturularak ekrana yazılması
+    fetch("veri2.json")
+      .then((response) => response.json())
+      .then((saatler) => {
+        console.log(saatler); //silinecek, kontrol amaçlı eklendi
+
+        let yenisaatÖgesi = document.getElementById("anaSayfa");
+        let saatlerHTML = "";
+
         for (let saat in saatler.hours) {
-            saatlerHTML += `
+          saatlerHTML += `
                 <div class="custom-card">
                     <div class="custom-card-body">
                         <div class="card-body">
@@ -60,22 +115,20 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
-            `
+            `;
         }
         yenisaatÖgesi.innerHTML += saatlerHTML;
-        
 
         //saat seçim kısmı
-        let kutularım = document.querySelectorAll('.custom-card');
-        kutularım.forEach(kutum => {
-        kutum.addEventListener('click', function() {
-            saatSecilen = kutum.querySelector('h4').innerText;
-            console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
-            document.getElementById('bosSaat').innerText = `${saatSecilen}`
-            icerik.innerText = 'Lütfen alan seçimi yapınız'
-            
+        let kutularım = document.querySelectorAll(".custom-card");
+        kutularım.forEach((kutum) => {
+          kutum.addEventListener("click", function () {
+            saatSecilen = kutum.querySelector("h4").innerText;
+            console.log(saatSecilen); //silinecek, kontrol amaçlı yazıldı
+            document.getElementById("bosSaat").innerText = `${saatSecilen}`;
+            icerik.innerText = "Lütfen alan seçimi yapınız";
 
-            document.getElementById('anaSayfa').innerHTML = `
+            document.getElementById("anaSayfa").innerHTML = `
                 <div class="container-alan">
                     <div class="eleman">ŞEF'İN MASASI</div>
                     <div class="eleman">ANA <br> SALON</div>
@@ -83,16 +136,18 @@ $(document).ready(function() {
                 </div>
                 
         
-            `
-        // misafir sayısı seçimini ekrana çıkartma kısmı
-        const kisiSayisi = document.querySelectorAll('.eleman');
-        
-        // Olay işleyici fonksiyonu tanımlama
-        function handleClick(event) {
-            console.log('Çalışıyor, sakin olun!'); // Kontrol amaçlı yazıldı
+            `;
+            // misafir sayısı seçimini ekrana çıkartma kısmı
+            const kisiSayisi = document.querySelectorAll(".eleman");
 
-            // Yeni içeriği ekle
-            document.getElementById('anaSayfa').insertAdjacentHTML('afterend', `
+            // Olay işleyici fonksiyonu tanımlama
+            function handleClick(event) {
+              console.log("Çalışıyor, sakin olun!"); // Kontrol amaçlı yazıldı
+
+              // Yeni içeriği ekle
+              document.getElementById("anaSayfa").insertAdjacentHTML(
+                "afterend",
+                `
                 <div class="container-kapsam" id="misafirSecimAlanı">
                     <div class="container-soru">
                         <span class="sorucümlesi">Lütfen misafir sayısını seçiniz</span>
@@ -105,18 +160,24 @@ $(document).ready(function() {
                         <div class="adetler">6</div>
                     </div>
                 </div>
-            `);
-            let misafirSecim = document.querySelectorAll('.adetler')
-            misafirSecim.forEach(daireAdetler =>{
-                daireAdetler.addEventListener('click',function(){
-                    secilenMisafirAdeti = daireAdetler.innerText
-                    console.log(secilenMisafirAdeti)
-                    document.getElementById('bosMisafir').innerText = `${secilenMisafirAdeti}`
-                    document.getElementById('tarihSecimi').style.display = 'none'
-                    // document.getElementById('anaSayfa').style.display = 'none'
-                    document.getElementById('misafirSecimAlanı').style.display = 'none'
+            `
+              );
+              let misafirSecim = document.querySelectorAll(".adetler");
+              misafirSecim.forEach((daireAdetler) => {
+                daireAdetler.addEventListener("click", function () {
+                  secilenMisafirAdeti = daireAdetler.innerText;
+                  console.log(secilenMisafirAdeti);
+                  document.getElementById(
+                    "bosMisafir"
+                  ).innerText = `${secilenMisafirAdeti}`;
+                  document.getElementById("tarihSecimi").style.display = "none";
+                  // document.getElementById('anaSayfa').style.display = 'none'
+                  document.getElementById("misafirSecimAlanı").style.display =
+                    "none";
 
-                    document.getElementById('islemler').insertAdjacentHTML('beforeend', `
+                  document.getElementById("islemler").insertAdjacentHTML(
+                    "beforeend",
+                    `
         
                         <div class="col">
                             <a class="nav-link" id="islemi-tamamla" aria-current="page" href="islemtamamla.html">
@@ -125,8 +186,9 @@ $(document).ready(function() {
                             </a>
                         </div>
                         
-                            `);
-                    document.getElementById('anaSayfa').innerHTML = `
+                            `
+                  );
+                  document.getElementById("anaSayfa").innerHTML = `
                 <div id="guestForm">
                     <h5 class="rez-bilgisi-baslik"> Lütfen rezervasyonunuzu tamamlayın</h5>
                     
@@ -188,10 +250,9 @@ $(document).ready(function() {
                     </div>
                     </form>
                 </div>       
-                `
-            
+                `;
 
-            document.getElementById('beklemeListesi').innerHTML = `
+                  document.getElementById("beklemeListesi").innerHTML = `
                 <div>
                     <!-- Bilgilendirmes Kutusu -->
 
@@ -232,58 +293,50 @@ $(document).ready(function() {
                     <!-- Gönder/Submit butonu -->
                     <button type="submit" id="submit">Rezervasyonu Tamamla</button>
                 </div>
-                `
+                `;
+                });
+              });
 
-                })
-            })
-
-
-            // Tüm elemanlardan olay dinleyicisini kaldır
-            kisiSayisi.forEach(misafirler => {
-                misafirler.removeEventListener('click', handleClick);
-            });
-        }
-
-        // Her bir eleman için olay dinleyicisi ekleme
-        kisiSayisi.forEach(misafirler => {
-            misafirler.addEventListener('click', handleClick);
-        });
-
-        
-        
-
-        }) 
-        });
-        
-
-
-
-        class Guest{
-            constructor(isim, soyisim,telefonNo,mail,tarih,saat,misafirSayisi,alerjenBilgisi,özelİstek,faturaTalebi){
-                  
-                this.isim = isim 
-                this.soyisim = soyisim   
-                this.telefonNo = telefonNo   
-                this.mail = mail 
-                  
-                // this.tarih = tarih  
-                // this.saat = saat   
-                // this.misafirSayisi = misafirSayisi 
-
-                // this.alerjenBilgisi = alerjenBilgisi  
-                // this.özelİstek = özelİstek  
-                // this.faturaTalebi = faturaTalebi   
+              // Tüm elemanlardan olay dinleyicisini kaldır
+              kisiSayisi.forEach((misafirler) => {
+                misafirler.removeEventListener("click", handleClick);
+              });
             }
-        }
-        const guests = []
-    
-    
-        const guest1 = new Guest('Ayşe', 'Kara', '555-5678', 'ayse.kara@example.com');
 
-        console.log(guest1)
+            // Her bir eleman için olay dinleyicisi ekleme
+            kisiSayisi.forEach((misafirler) => {
+              misafirler.addEventListener("click", handleClick);
+            });
+          });
+        });
+      });
+  });
+});
 
+
+
+
+/* 
         
-        /* 
+        function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const data = new FormData(event.target);
+        
+        const formJSON = Object.fromEntries(data.entries());
+
+        // for multi-selects, we need special handling
+        formJSON.snacks = data.getAll('snacks');
+        
+        const results = document.querySelector('.results pre');
+        results.innerText = JSON.stringify(formJSON, null, 2);
+        }
+
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', handleFormSubmit);
+*/
+
+/* 
         let tarih = valueTarih
         console.log(tarih)  //silinecek 
 
@@ -292,32 +345,13 @@ $(document).ready(function() {
 
         let misafirSayisi = secilenMisafirAdeti
         console.log(misafirSayisi) //silinecek  */
-        
-    /*  
+
+/*  
         const isim = document.getElementById('rezervasyonSahibiAd').value;
         const soyisim = document.getElementById('rezervasyonSahibiSoyad').value;
         const telefonNo = document.getElementById('phone').value;
         const mail = document.getElementById('rezervasyonSahibiMail').value;
          */
-
-
-
-
-
-
-
-        });
-        
-        
-    })
-});
-
-
-
-
-
-
-
 
 /* 
 <div class="container mt-5">
@@ -337,7 +371,6 @@ let kutularım = document.querySelectorAll('.custom-card');
             console.log(saatSecilen)  //silinecek, kontrol amaçlı yazıldı
             document.getElementById('bosSaat').innerText = `${saatSecilen}`
             icerik.innerText = 'Lütfen alan seçimi yapınız' */
-
 
 /* 
 fetch örnek yazım
@@ -374,8 +407,6 @@ function sayac(){
     }
 } */
 
-
-
 /* kutu.addEventListener('click',function(){
     kutu.style.backgroundColor = '#ff0000' 
     kutu.style.width = '100px'  
@@ -404,8 +435,60 @@ document.getElementById('datetimepicker').style.display = 'none'
 
 */
 
-
 /* 
 
+
+*/
+
+
+
+
+
+
+
+/*
+Örnek json:
+
+[
+  {
+    "isim": "Ahmet",
+    "soyisim": "Yılmaz",
+    "telefonNo": "5551234567",
+    "email": "ahmet.yilmaz@example.com",
+    "tarih": "2024-08-15",
+    "saat": "19:00",
+    "alanSecimi": "Bahçe",
+    "misafirSayisi": 4,
+    "alerjenBilgisi": "Fıstık alerjisi",
+    "ozelIstek": "Sessiz bir masa",
+    "faturaTalebi": true
+  },
+  {
+    "isim": "Mehmet",
+    "soyisim": "Kara",
+    "telefonNo": "5557654321",
+    "email": "mehmet.kara@example.com",
+    "tarih": "2024-08-16",
+    "saat": "20:00",
+    "alanSecimi": "Salon",
+    "misafirSayisi": 2,
+    "alerjenBilgisi": "Laktoz intoleransı",
+    "ozelIstek": "Pencere kenarı",
+    "faturaTalebi": false
+  },
+  {
+    "isim": "Ayşe",
+    "soyisim": "Demir",
+    "telefonNo": "5559876543",
+    "email": "ayse.demir@example.com",
+    "tarih": "2024-08-17",
+    "saat": "18:30",
+    "alanSecimi": "Teras",
+    "misafirSayisi": 5,
+    "alerjenBilgisi": "Gluten alerjisi",
+    "ozelIstek": "Doğum günü kutlaması",
+    "faturaTalebi": true
+  }
+]
 
 */
