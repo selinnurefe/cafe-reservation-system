@@ -26,6 +26,10 @@ buton.addEventListener('click', function() {
                                 <p>Özel İstek: ${info.ozelIstek}</p>
                                 <p>Fatura Talebi: ${info.faturaTalebi}</p>
                                 <p>Fatura Talebi: ${info.conceptSecimi}</p>
+                                <div id="actionsBtn"> 
+                                <button class="btn" style="width: 100px; margin-top: 10px; margin-right: 3px; margin-bottom: 3px">Güncelle</button>
+                                <button class="btn" style="width: 100px; margin-top: 10px; margin-bottom: 3px;">Sil</button>
+                                </div>
                             </div>
                         </div>
                     </div>`;
