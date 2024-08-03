@@ -88,7 +88,9 @@ $(document).ready(function () {
 
     //Guest objesi ile olusturmus oldugumuz guest degiskenine tarih degerinin atamasını gerceklestirdik.
     guest.tarih = valueTarih;
-    guest.
+    console.log(guest) //deneme amaçlı yazılan satır
+    console.log(guest.tarih) //deneme amaçlı yazılan satır
+    
 
 
     document.getElementById("datetimepicker").style.display = "none";
@@ -127,9 +129,13 @@ $(document).ready(function () {
             console.log(saatSecilen); //silinecek, kontrol amaçlı yazıldı
             document.getElementById("bosSaat").innerText = `${saatSecilen}`;
             icerik.innerText = "Lütfen alan seçimi yapınız";
+            
+            guest.saat = saatSecilen;
+            console.log(guest) //deneme amaçlı yazıldı
+
 
             document.getElementById("anaSayfa").innerHTML = `
-                <div class="container-alan">
+                <div class="container-alan" id="alan">
                     <div class="eleman">ŞEF'İN MASASI</div>
                     <div class="eleman">ANA <br> SALON</div>
                     <div class="eleman">ROOF</div>
@@ -139,6 +145,8 @@ $(document).ready(function () {
             `;
             // misafir sayısı seçimini ekrana çıkartma kısmı
             const kisiSayisi = document.querySelectorAll(".eleman");
+
+            
 
             // Olay işleyici fonksiyonu tanımlama
             function handleClick(event) {
@@ -161,15 +169,21 @@ $(document).ready(function () {
                     </div>
                 </div>
             `
-              );
+            );
+            
+              
               let misafirSecim = document.querySelectorAll(".adetler");
               misafirSecim.forEach((daireAdetler) => {
                 daireAdetler.addEventListener("click", function () {
                   secilenMisafirAdeti = daireAdetler.innerText;
                   console.log(secilenMisafirAdeti);
-                  document.getElementById(
-                    "bosMisafir"
-                  ).innerText = `${secilenMisafirAdeti}`;
+                  document.getElementById("bosMisafir").innerText = `${secilenMisafirAdeti}`;
+
+                 
+                  guest.misafirSayisi = secilenMisafirAdeti;
+                  console.log(guest) //deneme amaçlı yazıldı
+
+
                   document.getElementById("tarihSecimi").style.display = "none";
                   // document.getElementById('anaSayfa').style.display = 'none'
                   document.getElementById("misafirSecimAlanı").style.display =
@@ -312,6 +326,7 @@ $(document).ready(function () {
       });
   });
 });
+
 
 
 
