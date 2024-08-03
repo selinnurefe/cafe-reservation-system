@@ -1,9 +1,47 @@
-{
-    "hours":{
-        "19:00": "müsait",     
-        "19:30": "müsait değil",     
-        "20:00": "müsait",     
-        "20:30": "müsait değil",
-        "21:00": "müsait"    
-     }
-}
+[
+    {
+      "isim": "Ahmet",
+      "soyisim": "Yılmaz",
+      "telefonNo": "5551234567",
+      "email": "ahmet.yilmaz@example.com",
+      "tarih": "2024-08-15",
+      "saat": "19:00",
+      "alanSecimi": "Bahçe",
+      "misafirSayisi": 4,
+      "alerjenBilgisi": "Fıstık alerjisi",
+      "alerjenVarYok": "yok",
+      "ozelIstek": "Sessiz bir masa",
+      "conceptSecimi": "Anniversary",
+      "faturaIstegi": "var"
+    },
+    {
+      "isim": "Mehmet",
+      "soyisim": "Kara",
+      "telefonNo": "5557654321",
+      "email": "mehmet.kara@example.com",
+      "tarih": "2024-08-16",
+      "saat": "20:00",
+      "alanSecimi": "Salon",
+      "misafirSayisi": 2,
+      "alerjenBilgisi": "Laktoz intoleransı",
+      "alerjenVarYok": "yok",
+      "ozelIstek": "Pencere kenarı",
+      "conceptSecimi": "Anniversary",
+      "faturaTalebi": "var"
+    },
+    {
+      "isim": "Ayşe",
+      "soyisim": "Demir",
+      "telefonNo": "5559876543",
+      "email": "ayse.demir@example.com",
+      "tarih": "2024-08-17",
+      "saat": "18:30",
+      "alanSecimi": "Teras",
+      "misafirSayisi": 5,
+      "alerjenBilgisi": "Gluten alerjisi",
+      "alerjenVarYok": "yok",
+      "ozelIstek": "Doğum günü kutlaması",
+      "conceptSecimi": "Anniversary",
+      "faturaTalebi": "yok"
+    }
+  ]

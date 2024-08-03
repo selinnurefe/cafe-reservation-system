@@ -50,9 +50,26 @@ Todo3: Verilen veriyi file a json olarak yazan, güncelleyen ve silen 3 fonksiyo
 
 */
 
-function writeJsonToFile(guest,filePath){
+/* function writeJsonToFile(guest,filePath){
     //Eğer verilen file pathde dosya yok ise oluştur ve dosyanın içeriği verilen içeriği ekle.
-}
+} */
+
+
+/* const JSONToFile = (guest, kullaniciData) => {
+    const blob = new Blob([JSON.stringify(guest, null, 2)], {
+      type: 'kullaniciData/json',
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${kullaniciData}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+  
+  
+  // downloads the object as 'testJsonFile.json'  
+ */
 function updateJsonToFile(guest,filePath,email){
     //Json dosyasında verilen email objesini bul ve verilen değerler ile objeyi güncelle.
 }
@@ -62,9 +79,9 @@ function deleteJsonToFile(guest,filePath,email){
 
 /*
 
-Todo1: guest değişkenine kullanıcıdan alabildiğin verileri set edeceksin.
+Todo1: guest değişkenine kullanıcıdan alabildiğin verileri set edeceksin. //done
 
-Todo2: formdan kullanıcının girdiği verileri alarak guest değişkeninin içerisine set edeceksin.#afb6b4
+Todo2: formdan kullanıcının girdiği verileri alarak guest değişkeninin içerisine set edeceksin.//done
 
 Todo3: dosyaya json yazan fonksiyon oluşturacaksın.
 
@@ -154,8 +171,9 @@ $(document).ready(function () {
             console.log("Çalışıyor, sakin olun!"); // Kontrol amaçlı yazıldı
                 
             //Alan Bilgisi Class a atıldı
-            guest.alanSecimi = event.target.innerText
+            guest.alanSecimi = event.target.innerText   //bebeeğim 
             console.log(guest.alanSecimi)
+          
 
               // Yeni içeriği ekle
               document.getElementById("anaSayfa").insertAdjacentHTML(
@@ -326,6 +344,7 @@ $(document).ready(function () {
                     guest.ozelIstek =  document.getElementById('textareaÖzelİstek').value 
                     guest.faturaIstegi = document.querySelector('input[name="faturaTalebi"]:checked').value 
                     console.log(guest)
+                    /* JSONToFile(guest, 'deneme') */
                 })
                 
 
