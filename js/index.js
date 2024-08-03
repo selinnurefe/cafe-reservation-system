@@ -23,7 +23,7 @@ for(let element of dateChoiseArray){                  //event ekledik ancak olma
  */
 
 class Guest{
-    constructor(isim, soyisim,telefonNo,email,tarih,saat,alanSecimi,misafirSayisi,alerjenBilgisi,ozelIstek,faturaTalebi){
+    constructor(isim, soyisim, telefonNo, email, tarih, saat, alanSecimi, misafirSayisi, alerjenVarYok,ozelIstek,conceptSecimi, faturaIstegi){
         
         this.isim = isim 
         this.soyisim = soyisim   
@@ -35,9 +35,10 @@ class Guest{
         this.alanSecimi = alanSecimi 
         this.misafirSayisi = misafirSayisi 
 
-        this.alerjenBilgisi = alerjenBilgisi  
+        this.alerjenVarYok = alerjenVarYok
         this.ozelIstek = ozelIstek  
-        this.faturaTalebi = faturaTalebi   
+        this.conceptSecimi = conceptSecimi
+        this.faturaIstegi = faturaIstegi   
     }
 }
 
@@ -150,7 +151,11 @@ $(document).ready(function () {
 
             // Olay işleyici fonksiyonu tanımlama
             function handleClick(event) {
-              console.log("Çalışıyor, sakin olun!"); // Kontrol amaçlı yazıldı
+            console.log("Çalışıyor, sakin olun!"); // Kontrol amaçlı yazıldı
+                
+            //Alan Bilgisi Class a atıldı
+            guest.alanSecimi = event.target.innerText
+            console.log(guest.alanSecimi)
 
               // Yeni içeriği ekle
               document.getElementById("anaSayfa").insertAdjacentHTML(
@@ -181,7 +186,6 @@ $(document).ready(function () {
 
                  
                   guest.misafirSayisi = secilenMisafirAdeti;
-                  console.log(guest) //deneme amaçlı yazıldı
 
 
                   document.getElementById("tarihSecimi").style.display = "none";
@@ -242,13 +246,13 @@ $(document).ready(function () {
                         
                         <h6>Dilerseniz etiketler seçerek rezervasyonunuzu detaylandırabilirsiniz</h6>
                         
-                        <input type="radio" id="birthday" name="etiketler" value="Birthday">
+                        <input type="radio" id="birthday" name="etiketlerConcept" value="Birthday">
                         <label for="birthday">Doğum Günü</label>
 
-                        <input type="radio" id="anniversary" name="etiketler" value="Anniversary">
+                        <input type="radio" id="anniversary" name="etiketlerConcept" value="Anniversary">
                         <label for="anniversary">Yıl Dönümü</label>
 
-                        <input type="radio" id="honeymoon" name="etiketler" value="Honeymoon">
+                        <input type="radio" id="honeymoon" name="etiketlerConcept" value="Honeymoon">
                         <label for="honeymoon">Honeymoon</label> <br>
                     </div>   
                     <div id="rez-fatura-talebi">
@@ -256,15 +260,17 @@ $(document).ready(function () {
 
                         <p>Bu ziyaretinizde fatura talebiniz olacak mı?</p>
 
-                        <input type="radio" id="faturaTalebiVar" name="faturaTalebi" value="Evet" required>
+                        <input type="radio" id="faturaTalebiVar" name="faturaTalebi" value="isteniyor" required>
                         <label for="faturaTalebiVar">Evet</label><br>
 
-                        <input type="radio" id="faturaTalebiYok" name="faturaTalebi" value="Hayır" required> 
+                        <input type="radio" id="faturaTalebiYok" name="faturaTalebi" value="istenmiyor" required> 
                         <label for="faturaTalebiYok">Hayır</label><br>
                     </div>
                     </form>
                 </div>       
                 `;
+
+                
 
                   document.getElementById("beklemeListesi").innerHTML = `
                 <div>
@@ -308,6 +314,22 @@ $(document).ready(function () {
                     <button type="submit" id="submit">Rezervasyonu Tamamla</button>
                 </div>
                 `;
+                
+                let rezervasyonTamamla = document.getElementById('submit')
+                rezervasyonTamamla.addEventListener('click',function(){
+                    guest.isim = document.getElementById('rezervasyonSahibiAd').value
+                    guest.soyisim = document.getElementById('rezervasyonSahibiSoyad').value
+                    guest.telefonNo = document.getElementById('phone').value
+                    guest.email = document.getElementById('rezervasyonSahibiMail').value
+                    guest.alerjenVarYok = document.querySelector('input[name="alerjenBilgisi"]:checked').value 
+                    guest.conceptSecimi = document.querySelector('input[name="etiketlerConcept"]:checked').value 
+                    guest.ozelIstek =  document.getElementById('textareaÖzelİstek').value 
+                    guest.faturaIstegi = document.querySelector('input[name="faturaTalebi"]:checked').value 
+                    console.log(guest)
+                })
+                
+
+
                 });
               });
 
