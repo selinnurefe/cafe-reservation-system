@@ -1,27 +1,27 @@
-const express = require('express'); // Express kütüphanesi
-const bodyParser = require('body-parser'); // Body parser middleware
-const cors = require('cors'); // CORS middleware
-const fs = require('fs'); // Dosya sistemi işlemleri
-const path = require('path'); // Dosya yolu işlemleri
+const express = require('express'); 
+const bodyParser = require('body-parser'); 
+const cors = require('cors');
+const fs = require('fs'); 
+const path = require('path'); 
 
-const app = express(); // Express uygulaması oluşturma
-const PORT = 3000; // Sunucu port numarası
+const app = express(); 
+const PORT = 3000; 
 
-app.use(cors()); // <== Eklenen Kod: Tüm isteklerde CORS'u etkinleştir
+app.use(cors()); 
 
-// Tüm statik dosyaları ana dizinden sunmak için
+
 app.use(express.static(path.join(__dirname)));
 
-// Body parser middleware
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// JSON dosya yolu
-const filePath = path.join(__dirname, 'rezervasyons.json');
+
+const filePath = 'rezervasyons.json'; 
 
 // Yeni rezervasyonu JSON dosyasına yazan fonksiyon
 function writeJsonToFile(guest, filePath) {
-    // Eğer dosya yoksa, boş bir diziyle başlat
+    
     if (!fs.existsSync(filePath)) {
         fs.writeFileSync(filePath, JSON.stringify([], null, 2));
     }
@@ -40,6 +40,7 @@ function writeJsonToFile(guest, filePath) {
 
 // Rezervasyonu silen fonksiyon
 function deleteReservationByEmail(email, filePath) {
+    console.log("deleteReservationByEmail fonksiyonu çalıştı");
     const data = fs.readFileSync(filePath, 'utf8');
     const reservations = JSON.parse(data);
 
@@ -50,6 +51,7 @@ function deleteReservationByEmail(email, filePath) {
     fs.writeFileSync(filePath, JSON.stringify(updatedReservations, null, 2));
     console.log('Rezervasyon silindi!');
 }
+
 // POST isteği ile form verilerini işleme
 app.post('/submit-reservation', (req, res) => {
     const guest = req.body;
@@ -60,12 +62,14 @@ app.post('/submit-reservation', (req, res) => {
 // DELETE isteği ile rezervasyon silme işlemi
 app.delete('/delete-reservation', (req, res) => { // <== Eklenen Kod: Silme işlemi için API endpoint
     const { email } = req.body;
+
+    console.log("Requestin içerisinden email alındı: " + email);
     
-    if(!email) {
-        return res.status(400).json({ message: 'Geçersiz e-posta adresi' });
+    if (!email) {
+        return res.status(400).json({ message: 'Geçersiz e-posta adresi - Emaili bulamadım.' });
     }
 
-    deleteReservationByEmail(email, filePath);
+    deleteReservationByEmail(email, filePath); // Burada "filePath" değişkeni kullanılıyor
     res.status(200).json({ message: 'Rezervasyon silindi!' });
 });
 
@@ -73,6 +77,7 @@ app.delete('/delete-reservation', (req, res) => { // <== Eklenen Kod: Silme işl
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 // Admin paneli rotası (adminpaneli.html)
 app.get('/admin', (req, res) => {  // <== Eklenen Kod: Admin paneli rotası
     res.sendFile(path.join(__dirname, 'adminpaneli.html'));

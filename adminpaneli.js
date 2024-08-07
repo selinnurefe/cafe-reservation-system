@@ -30,7 +30,6 @@ function getData() {
                                 <p>Fatura Talebi: ${info.faturaIstegi}</p>
                                 <p>Concept: ${info.conceptSecimi}</p>
                                 <div id="actionsBtn"> 
-                                    <button class="btn updatebtn" style="width: 100px; margin-top: 10px; margin-right: 3px; margin-bottom: 3px">Güncelle</button>
                                     <button class="btn silbtn" style="width: 100px; margin-top: 10px; margin-bottom: 3px;" data-email="${info.email}">Sil</button>
                                 </div>
                             </div>
@@ -44,16 +43,9 @@ function getData() {
             silButonlari.forEach((button) => {  
                 button.addEventListener('click', function() {
                     const email = this.getAttribute('data-email');  // data-email değerini al
+                    console.log("delete event called!")
+                    console.log(email)
                     deleteReservation(email); // email'i fonksiyona geçir
-                });
-            });
-
-            // Güncelleme butonlarına tıklama olayları ekleme (Opsiyonel)
-            const updateButonlari = document.querySelectorAll('.updatebtn');
-            updateButonlari.forEach((button) => {
-                button.addEventListener('click', function() {
-                    const email = this.getAttribute('data-email');
-                    updateReservation(email);
                 });
             });
         })
@@ -64,6 +56,9 @@ function getData() {
 
 // deleteReservation fonksiyonu: Belirtilen email'e sahip kullanıcıyı sil
 function deleteReservation(email) {
+    console.log("deleteReservation functions called")
+    console.log(email)
+    console.log(JSON.stringify({ email }))
     fetch('/delete-reservation', {  // Sunucu URL'sine istek yap
         method: 'DELETE',
         headers: {

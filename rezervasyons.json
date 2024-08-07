@@ -1,33 +1,5 @@
 [
   {
-    "isim": "serpil",
-    "soyisim": "efe",
-    "telefonNo": "05455555555",
-    "email": "efe@gmail.com",
-    "tarih": "2024-08-16",
-    "saat": "20:00",
-    "alanSecimi": "ANA\nSALON",
-    "misafirSayisi": "3",
-    "alerjenVarYok": "yok",
-    "ozelIstek": "fıstık alerjisi",
-    "conceptSecimi": "Birthday",
-    "faturaIstegi": "isteniyor"
-  },
-  {
-    "isim": "melis",
-    "soyisim": "kaya",
-    "telefonNo": "05551445544",
-    "email": "kaya@gmail.com",
-    "tarih": "2024-08-12",
-    "saat": "19:00",
-    "alanSecimi": "ŞEF'İN MASASI",
-    "misafirSayisi": "4",
-    "alerjenVarYok": "yok",
-    "ozelIstek": "",
-    "conceptSecimi": "Anniversary",
-    "faturaIstegi": "istenmiyor"
-  },
-  {
     "isim": "Ecem",
     "soyisim": "Akkaya",
     "telefonNo": "05455558877",
@@ -39,20 +11,6 @@
     "alerjenVarYok": "var",
     "ozelIstek": "",
     "conceptSecimi": "Honeymoon",
-    "faturaIstegi": "İstenmiyor"
-  },
-  {
-    "isim": "Ece",
-    "soyisim": "Yılmaz",
-    "telefonNo": "05553332322",
-    "email": "yılmaz11@gmail.com",
-    "tarih": "2024-08-05",
-    "saat": "20:00",
-    "alanSecimi": "ROOF",
-    "misafirSayisi": "2",
-    "alerjenVarYok": "yok",
-    "ozelIstek": "",
-    "conceptSecimi": "Birthday",
     "faturaIstegi": "İstenmiyor"
   },
   {
@@ -82,5 +40,19 @@
     "ozelIstek": "",
     "conceptSecimi": "Birthday",
     "faturaIstegi": "İstenmiyor"
+  },
+  {
+    "isim": "Selin",
+    "soyisim": "EFE",
+    "telefonNo": "05559994855",
+    "email": "efeefe11@gmail.com",
+    "tarih": "2024-08-31",
+    "saat": "21:00",
+    "alanSecimi": "ROOF",
+    "misafirSayisi": "2",
+    "alerjenVarYok": "yok",
+    "ozelIstek": "manzaralı masa",
+    "conceptSecimi": "Birthday",
+    "faturaIstegi": "isteniyor"
   }
 ]
